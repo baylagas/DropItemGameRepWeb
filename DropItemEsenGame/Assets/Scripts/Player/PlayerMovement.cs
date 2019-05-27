@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float speed;
 
     void Update()
     {
@@ -11,14 +12,14 @@ public class PlayerMovement : MonoBehaviour
         {
             if(transform.position.x > -7)
             { 
-                transform.Translate(new Vector3(-1f, 0, 0)* 6 * Time.deltaTime);
+                transform.Translate(new Vector3(-1f, 0, 0)* speed * Time.deltaTime);
             }
         }
         else if(Input.GetKey(KeyCode.D))
         {
             if(transform.position.x < 7)
             { 
-                transform.Translate(new Vector3(1f, 0, 0) * 6 * Time.deltaTime);
+                transform.Translate(new Vector3(1f, 0, 0) * speed * Time.deltaTime);
             }
         }
     }
